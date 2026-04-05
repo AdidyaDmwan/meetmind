@@ -1,0 +1,23 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Node
+node_modules/
+.next/
+frontend/.next/
+
+# Docker volumes
+postgres_data/
+
+# Uploads
+backend/app/uploads/
+
+# OS
+.DS_Store
+Thumbs.db

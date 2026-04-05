@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: meetmind_user
+      POSTGRES_PASSWORD: meetmind_pass
+      POSTGRES_DB: meetmind_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+      - uploads_data:/app/uploads
+      - whisper_models:/root/.cache/huggingface
+
+volumes:
+  postgres_data:
+  uploads_data:
+  whisper_models:
