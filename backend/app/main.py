@@ -16,8 +16,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://meetmind.vercel.app",
-        "https://*.vercel.app",
+        "https://meetmind-kappa.vercel.app",
+        "https://meetmind-aqvtyh4sy-adidya-darmawans-projects.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
