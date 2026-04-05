@@ -5,10 +5,10 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24
-
     UPLOAD_DIR: str = "/app/uploads"
     WHISPER_MODEL: str = "base"
     GEMINI_API_KEY: str
+    CLERK_SECRET_KEY: str = ""
 
     class Config:
         env_file = ".env"

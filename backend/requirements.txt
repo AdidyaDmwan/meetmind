@@ -18,3 +18,4 @@ google-generativeai==0.7.2
 groq==0.9.0
 httpx==0.27.0
 pypdf==4.3.1
+clerk-backend-api==1.5.0
