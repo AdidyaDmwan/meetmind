@@ -8,6 +8,10 @@
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker)
 ![Groq](https://img.shields.io/badge/Groq-LLaMA_3.1-orange?style=flat-square)
 
+## 🌐 Live Demo
+- **App:** https://meetmind-kappa.vercel.app
+- **API Docs:** https://meetmind-production.up.railway.app/docs
+
 ## ✨ Features
 
 - 📤 **Upload Meeting Files** — Support audio (.mp3, .wav, .m4a) and text (.txt, .pdf)
