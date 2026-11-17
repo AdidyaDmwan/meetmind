@@ -9,6 +9,11 @@ export default function NavbarApp() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user_email");
+    if (typeof document !== "undefined") {
+      document.cookie =
+        "demo_session=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    }
     router.push("/login");
   };
 

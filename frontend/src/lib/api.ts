@@ -15,7 +15,12 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    if (err.response?.status === 401) {
+    const isDemo =
+      typeof window !== "undefined" &&
+      (localStorage.getItem("token") === "demo_token" ||
+        document.cookie.includes("demo_session=true"));
+
+    if (err.response?.status === 401 && !isDemo) {
       localStorage.removeItem("token");
       window.location.href = "/login";
     }

@@ -1,12 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useSignUp, useClerk } from "@clerk/nextjs";
+import { useAuth, useClerk, useSignUp } from "@clerk/nextjs";
 import api from "@/lib/api";
 import Link from "next/link";
 
 export default function RegisterPage() {
   const router = useRouter();
+  const { isSignedIn, isLoaded } = useAuth();
   const { openSignUp } = useClerk();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,6 +34,12 @@ const handleGoogleRegister = () => {
     forceRedirectUrl: "/dashboard",
   });
 };
+
+  useEffect(() => {
+  if (isLoaded && isSignedIn) {
+    router.push("/dashboard");
+  }
+}, [isLoaded, isSignedIn]);
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-4">
